@@ -81,34 +81,7 @@ header img {
     align-items: center;
 }
 
-.conteudo-banner p {
-    color: white;
-
-    font-family: "Anta";
-    font-size: 32px;
-}
-
-#sobre {
-    height: 800px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    text-align: center;
-    padding: 100px 25%;
-}
-
-h2 {
-    font-family: "Anta";
-    font-size: 28px;
-}
-
-#sobre p {
-    font-family: "Monteserrat";
-    font-size: 17px;
-
-    text-align: left;
-}
+.c
 
 #cases {
     text-align: center;
@@ -217,7 +190,7 @@ h2 {
 
 #portfolio .container-grid {
     height: 100%;
-    
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -232,7 +205,7 @@ h2 {
     font-size: 28px;
 
     color: white;
-    
+
     z-index: 1;
 
 }
@@ -240,6 +213,7 @@ h2 {
 #portfolio a:hover {
     transform: scale(1.05);
 }
+
 #contato {
     text-align: center;
 
@@ -278,7 +252,7 @@ h2 {
 
 .campo {
     width: 60%;
-    
+
     margin-bottom: 50px;
 
     text-align: left;
@@ -300,7 +274,7 @@ h2 {
     outline: none;
 
     text-indent: 10px;
-    
+
     font-family: "Monteserrat";
     font-size: 17px;
 }
@@ -334,7 +308,8 @@ h2 {
     resize: none;
 }
 
-.campo input:focus, .campo-textarea textarea:focus {
+.campo input:focus,
+.campo-textarea textarea:focus {
     outline: 2px solid var(--laranja-gamifica);
 }
 
@@ -363,7 +338,7 @@ h2 {
     background-color: #ad4929;
 }
 
-#contato form input::placeholder, 
+#contato form input::placeholder,
 #contato form textarea::placeholder {
     color: #b9b9b9;
 }
@@ -384,7 +359,7 @@ footer .container-grid {
 
 .redes-sociais {
     height: 50%;
-    
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -417,7 +392,7 @@ footer .container-grid {
     header {
         position: relative;
     }
-    
+
     header button {
         width: 50px;
 
@@ -440,7 +415,6 @@ footer .container-grid {
 
         flex-direction: column;
         justify-content: space-around;
-        /* align-items: flex-end; */
 
         background-color: #000000f0;
 
@@ -495,7 +469,7 @@ footer .container-grid {
         text-align: center;
         margin-bottom: 40px;
     }
-    
+
     .redes-sociais {
         align-items: center;
     }
@@ -521,7 +495,8 @@ footer .container-grid {
         margin-bottom: 30px;
     }
 
-    #cases, #contato {
+    #cases,
+    #contato {
         margin-bottom: unset;
     }
 
@@ -530,9 +505,11 @@ footer .container-grid {
         text-align: center;
     }
 
-    .campo, .campo-textarea, #contato form button {
+    .campo,
+    .campo-textarea,
+    #contato form button {
         width: 75%;
-    }    
+    }
 }
 
 @media screen and (max-width: 520px) {
@@ -550,6 +527,40 @@ footer .container-grid {
 
     .conteudo-banner p {
         font-size: 24px;
+    }
+
+    .conteudo banner span {
+        display: block;
+        overflow: hidden;
+
+        border-right: 6px solid var(--laranja-gamifica);
+        white-space: nowrap;
+
+        animation: digitando 2s steps(40, end),
+            cursor 0.75 step-end infinite;
+
+    }
+
+    @keyframes digitando {
+        from {
+            width: 0
+        }
+
+        to {
+            width: 100%
+        }
+    }
+
+    @keyframes cursor {
+
+        from,
+        to {
+            border-color: transparent;
+        }
+
+        50% {
+            border-color: var(--laranja-gamifica);
+        }
     }
 
     nav.menu {
@@ -584,7 +595,7 @@ footer .container-grid {
 
     .card {
         height: 400px;
-        width: 280px;        
+        width: 280px;
 
         flex-basis: unset;
     }
@@ -635,4 +646,3 @@ footer .container-grid {
         width: 200px;
     }
 }
-
