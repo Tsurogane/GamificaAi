@@ -81,7 +81,7 @@ header img {
     align-items: center;
 }
 
-.c
+
 
 #cases {
     text-align: center;
@@ -171,7 +171,7 @@ header img {
     background-image: url(img/bonecos.png);
     background-size: contain;
 
-    background-repeat: repeat-x;
+    background-repeat: repeat;
 
     background-attachment: fixed;
 
