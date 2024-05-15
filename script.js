@@ -74,3 +74,47 @@ const mostrarSlideAnterior = () => {
 
     banner.classList.add(slides[slideAtual])
 }
+
+const selecionarSlide = (indiceSlide) => {
+    slides.forEach( slide => banner.classList.remove(slide))
+
+    slideAtual = indiceSlide
+
+    banner.classList.add(slides[indiceSlide])
+}
+
+let listaCases = [
+    {
+        imagem: "https://unsplash.it/600/400!image=13",
+        descricao: "Uma empresa de tecnologia lança uma desafio de gamificação onde os funcionarios devem propor implementar ideias inovadoras"
+},
+{
+    imagem: "https://unsplash.it/600/400!image=21",
+    descricao: "Uma empresa de consultoria cria uma narrativa interativa de gamificação para seu progama de treinamento"
+},
+{
+    imagem: "https://unsplash.it/600/400!image=32",
+    descricao: "Uma empresa de vendas implementa uma competição gamificada entre equipes que competem pelo topo do ranking"
+},
+{
+    imagem: "https://unsplash.it/600/400!image=44",
+    descricao: "Uma empresa promove o bem estar dos funcionarios atraves de um desafio de gamificação de condicionamento fisico"
+}
+   
+]
+
+const renderizarCases = () => {
+    let elementoLista = document.getElementById("lista-cases")
+
+    let template = ""
+
+    listaCases.forEach(cardCase => {
+        template += `<div class="card">
+        <img src="${cardCase.imagem}" alt="">
+        <p>${cardCase.descricao}</p>
+        <button>Ver mais</button>
+    </div>`
+    })
+
+    elementoLista.innerHTML = template;
+}
