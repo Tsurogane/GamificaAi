@@ -1,10 +1,12 @@
+
+
 // let menu = document.querySelector("#menu")
 let menu = document.getElementById("menu")
 let iconeBarras = document.getElementById("icone-barras")
 let iconeX = document.querySelector("#icone-x")
 
 function abrirFecharMenu() {
-    
+
     // Se o menu está fechado
     if (menu.classList.contains("menu-fechado")) {
         // Abrir o menu
@@ -35,14 +37,16 @@ window.onresize = () => {
 }
 
 
+// Função Carrosel
 
 let slides = [
     'primeiro-banner',
-    'segundo-banner',
+    "segundo-banner",
     'terceiro-banner'
 ]
 
-let slideAtual = 0;
+
+let slideAtual = 0
 
 let numeroSlides = slides.length
 
@@ -51,70 +55,113 @@ let banner = document.querySelector(".banner")
 banner.classList.add(slides[slideAtual])
 
 const mostrarProximoSlide = () => {
+    // Remove slide anterior
     banner.classList.remove(slides[slideAtual])
-    if(slideAtual < (numeroSlides - 1)) {
+
+    // numeroSlides = 3
+    // numeroSlides - 1 -> 2
+    // estou no ultimo? 2
+
+    // [0, 1, 2]
+
+    if (slideAtual < (numeroSlides - 1)) {
         slideAtual++
     } else {
         slideAtual = 0
     }
 
+    // Renderiza o slideAtual
     banner.classList.add(slides[slideAtual])
-
 }
 
 const mostrarSlideAnterior = () => {
+    // Remove slide anterior
+
+    // numeroSlides = 3
+    // numeroSlides - 1 -> 2
+
+    // [0, 1, 2]
 
     banner.classList.remove(slides[slideAtual])
 
     if (slideAtual > 0) {
         slideAtual--
     } else {
-        slideAtual = numeroSlides - 1 
+        slideAtual = numeroSlides - 1
     }
 
+
+    // Renderiza o slideAtual
     banner.classList.add(slides[slideAtual])
 }
 
 const selecionarSlide = (indiceSlide) => {
-    slides.forEach( slide => banner.classList.remove(slide))
+    slides.forEach(slide => banner.classList.remove(slide))
 
     slideAtual = indiceSlide
 
     banner.classList.add(slides[indiceSlide])
 }
 
-let listaCases = [
-    {
-        imagem: "https://unsplash.it/600/400!image=13",
-        descricao: "Uma empresa de tecnologia lança uma desafio de gamificação onde os funcionarios devem propor implementar ideias inovadoras"
-},
-{
-    imagem: "https://unsplash.it/600/400!image=21",
-    descricao: "Uma empresa de consultoria cria uma narrativa interativa de gamificação para seu progama de treinamento"
-},
-{
-    imagem: "https://unsplash.it/600/400!image=32",
-    descricao: "Uma empresa de vendas implementa uma competição gamificada entre equipes que competem pelo topo do ranking"
-},
-{
-    imagem: "https://unsplash.it/600/400!image=44",
-    descricao: "Uma empresa promove o bem estar dos funcionarios atraves de um desafio de gamificação de condicionamento fisico"
-}
-   
-]
+let listaCases = []
 
 const renderizarCases = () => {
-    let elementoLista = document.getElementById("lista-cases")
+    let elementoLista = document.getElementById("lista-cards")
 
+    // Template Strings
     let template = ""
 
-    listaCases.forEach(cardCase => {
+    listaCases.forEach( cardCase => {
         template += `<div class="card">
-        <img src="${cardCase.imagem}" alt="">
-        <p>${cardCase.descricao}</p>
-        <button>Ver mais</button>
-    </div>`
+            <img src="${cardCase.imagem}" alt="">
+            <p>${cardCase.descricao}</p>
+            <button>Ver mais</button>
+        </div>` 
     })
 
-    elementoLista.innerHTML = template;
+    elementoLista.innerHTML = template
+}
+
+const carregarCases = () => {
+    fetch("http://localhost:3000/cases")
+    .then( (resposta) => resposta.json() )
+    .then( (dados) => {
+        listaCases = dados
+        renderizarCases()
+    })
+    .catch( erro => console.error(erro))
+}
+
+
+const solicitarOrcamento = () => {
+    // Pegar valores dos inputs
+    let valorNome = document.getElementById("campo-nome").value
+    let valorEmail = document.getElementById("campo-email").value
+    let valorDescricao = document.getElementById("campo-descricao").value
+
+    console.log(valorNome);
+    console.log(valorEmail);
+    console.log(valorDescricao);
+    // Organizar objeto com os valores
+    let dadosForm = {
+        nome: valorNome,
+        email: valorEmail,
+        descricao: valorDescricao
+    }
+    // Enviar requisicao para a api
+
+        fetch("http://127.0.0.1:3000/solicitacoes",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(dadosForm)
+        })
+        .then(resposta => console.log(resposta))
+        .catch(erro => console.log(erro))
+        
+
+        // Limpar os campos
+        // Mostrar alert com msg de sucesso
+        // CASO ERRO - alert com msg erro
 }

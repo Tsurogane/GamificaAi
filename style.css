@@ -1,7 +1,7 @@
 /* Utilizando fontes específicas */
 @font-face {
     font-family: 'Montserrat';
-    src: url(fonts/Montserrat-VariableFont_wght.ttf);
+    src: url(Fontes/Montserrat-VariableFont_wght.ttf);
 }
 
 :root {
@@ -36,7 +36,7 @@ html {
 .banner {
     /* vh -> Porcentagem da ALTURA da viewport (janela) */
     height: 100vh;
-
+    
     background-repeat: no-repeat;
 
     background-position: 165% 40%;
@@ -75,7 +75,7 @@ html {
     right: 4%;
 }
 
-#botao-anterior, #botao-proximo svg {
+#botao-anterior svg, #botao-proximo svg {
     fill: #ffffff76;
 }
 
@@ -87,8 +87,11 @@ html {
     align-items: center;
 
     position: absolute;
-
     bottom: 4%;
+
+    /* Centralizar usando position */
+    /* Adicionar left: 50% */
+    /* E margin-left negativa com metade da largura do elemento */
     left: 50%;
     margin-left: -75px;
 }
@@ -99,7 +102,6 @@ html {
     background: none;
     border: none;
     cursor: pointer;
-
 }
 
 .botoes button svg {
