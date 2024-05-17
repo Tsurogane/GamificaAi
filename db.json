@@ -1,21 +1,44 @@
 {
-    "cases": [
-        {
-            "imagem": "https://unsplash.it/600/400!image=13",
-            "descricao": "Uma empresa de tecnologia lança uma desafio de gamificação onde os funcionarios devem propor implementar ideias inovadoras"
+  "cases": [
+    {
+      "imagem": "https://unsplash.it/600/400!image=13",
+      "descricao": "Uma empresa de tecnologia lança uma desafio de gamificação onde os funcionarios devem propor implementar ideias inovadoras",
+      "id": "8afc"
     },
     {
-        "imagem": "https://unsplash.it/600/400!image=21",
-        "descricao": "Uma empresa de consultoria cria uma narrativa interativa de gamificação para seu progama de treinamento"
+      "imagem": "https://unsplash.it/600/400!image=21",
+      "descricao": "Uma empresa de consultoria cria uma narrativa interativa de gamificação para seu progama de treinamento",
+      "id": "161d"
     },
     {
-        "imagem": "https://unsplash.it/600/400!image=32",
-        "descricao": "Uma empresa de vendas implementa uma competição gamificada entre equipes que competem pelo topo do ranking"
+      "imagem": "https://unsplash.it/600/400!image=32",
+      "descricao": "Uma empresa de vendas implementa uma competição gamificada entre equipes que competem pelo topo do ranking",
+      "id": "5788"
     },
     {
-        "imagem": "https://unsplash.it/600/400!image=44",
-        "descricao": "Uma empresa promove o bem estar dos funcionarios atraves de um desafio de gamificação de condicionamento fisico"
+      "imagem": "https://unsplash.it/600/400!image=44",
+      "descricao": "Uma empresa promove o bem estar dos funcionarios atraves de um desafio de gamificação de condicionamento fisico",
+      "id": "20c9"
     }
-    ],
-    "solicitacoes": []
+  ],
+  "solicitacoes": [
+    {
+      "id": "efd4",
+      "nome": "Felipe Tadeu",
+      "email": "tadeu@gamificai.com",
+      "descricao": "Tadeu, nao da aula direito"
+    },
+    {
+      "id": "8ec6",
+      "nome": "Felipe Tadeu",
+      "email": "tadeu@gamificai.com",
+      "descricao": "Tadeu nao da aula direito"
+    },
+    {
+      "id": "2835",
+      "nome": "asfasfsafa",
+      "email": "mvsa@gmail.com",
+      "descricao": "asdassasagsa"
+    }
+  ]
 }
